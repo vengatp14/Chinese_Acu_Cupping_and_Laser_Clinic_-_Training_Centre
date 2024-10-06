@@ -251,7 +251,7 @@ h6 {
 
   .header .topbar .contact-info i a,
   .header .topbar .contact-info i span {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
@@ -291,10 +291,19 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 25px;
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
+}
+
+@media screen and (max-width:600px) {
+  .header .logo h1 {
+    font-size: 12px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
 }
 
 .header .cta-btn,
@@ -942,7 +951,13 @@ section,
   font-size: 48px;
   font-weight: 700;
 }
-
+@media screen and (max-width:600px) {
+  .hero .welcome h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+  }
+}
 .hero .welcome p {
   font-size: 24px;
   margin: 0;
