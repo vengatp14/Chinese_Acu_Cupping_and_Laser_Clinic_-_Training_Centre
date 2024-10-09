@@ -713,6 +713,10 @@
   <script src="assets/js/main.js"></script>
 
   <script>
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').setAttribute('min', today);
+
     function sendWhatsApp() {
         const name = document.getElementById('name').value;
         const date = document.getElementById('date').value;
