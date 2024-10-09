@@ -65,7 +65,12 @@
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="doctors.html">Doctors</a></li>
-            <li><a href="contact_us.html">Contact</a></li><li><a href="javascript:void(0);" id="whatsappLink">sdgd</a></li>
+            <li><a href="contact_us.html">Contact</a></li>
+            <li><!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+              </button>
+            </li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -663,6 +668,39 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+     <form id="appointmentForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required><br><br>
+
+    <label for="date">Date of Appointment:</label>
+    <input type="date" id="date" required><br><br>
+
+    <label for="time">Time Slot:</label>
+    <input type="time" id="time" required><br><br>
+
+    <label for="comments">Additional Comments:</label>
+    <input type="text" id="comments"><br><br>
+
+    <button type="button" onclick="sendWhatsApp()">Send WhatsApp Message</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -673,16 +711,21 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
   <script>
-    document.getElementById('whatsappLink').addEventListener('click', function() {
-        const currentDate = new Date();
-        const formattedDate = currentDate.toLocaleDateString();
-        const formattedTime = currentDate.toLocaleTimeString();
-        const message = `hai this is hospital. Current date: ${formattedDate}, Time: ${formattedTime}`;
+    function sendWhatsApp() {
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const comments = document.getElementById('comments').value;
+
+        let message = `Good day! I’d like to make an appointment.\n\n• Name: ${name}\n• Date of Appointment: ${date}\n• Time Slot: ${time}\n• Additional Comments: ${comments ? comments : 'Optional'}\n\nPlease confirm availability.`;
+        
         const whatsappLink = `https://wa.me/+919884703322?text=${encodeURIComponent(message)}`;
         window.location.href = whatsappLink;
-    });
+    }
 </script>
+
 </body>
 
 </html>
