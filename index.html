@@ -713,17 +713,31 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    // Set minimum date to today
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('date').setAttribute('min', today);
+    // Set the minimum date to today's date
+    function setMinDate() {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    }
 
+    setMinDate();  // Call the function to set the minimum date
+    
+    // Validate time and date, then send WhatsApp message
     function sendWhatsApp() {
         const name = document.getElementById('name').value;
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
         const comments = document.getElementById('comments').value;
 
-        // Parse time into hours and minutes
+        // Check if the date is valid (today or later)
+        const today = new Date().setHours(0, 0, 0, 0); // Get today's date without time
+        const selectedDate = new Date(date).setHours(0, 0, 0, 0); // Set selected date without time
+
+        if (!date || selectedDate < today) {
+            alert("Please select a valid date that is today or later.");
+            return;
+        }
+
+        // Parse time into hours and minutes for validation
         const selectedTime = new Date('1970-01-01T' + time + 'Z');
         const hours = selectedTime.getUTCHours();
         const minutes = selectedTime.getUTCMinutes();
@@ -734,8 +748,10 @@
             return;
         }
 
+        // Construct the message to send via WhatsApp
         let message = `Good day! I’d like to make an appointment.\n\n• Name: ${name}\n• Date of Appointment: ${date}\n• Time Slot: ${time}\n• Additional Comments: ${comments ? comments : 'Optional'}\n\nPlease confirm availability.`;
         
+        // Open WhatsApp with the generated message
         const whatsappLink = `https://wa.me/+919884703322?text=${encodeURIComponent(message)}`;
         window.location.href = whatsappLink;
     }
