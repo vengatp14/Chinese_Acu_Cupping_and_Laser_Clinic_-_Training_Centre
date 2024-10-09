@@ -721,6 +721,15 @@
 
     setMinDate();  // Call the function to set the minimum date
     
+    // Convert 24-hour time format to 12-hour format with AM/PM
+    function formatTimeTo12Hour(time) {
+        const [hour, minute] = time.split(':');
+        let formattedHour = parseInt(hour, 10);
+        const period = formattedHour >= 12 ? 'PM' : 'AM';
+        formattedHour = formattedHour % 12 || 12;  // Convert '0' or '12' hour to '12 AM/PM'
+        return `${formattedHour}:${minute} ${period}`;
+    }
+
     // Validate time and date, then send WhatsApp message
     function sendWhatsApp() {
         const name = document.getElementById('name').value;
@@ -728,9 +737,9 @@
         const time = document.getElementById('time').value;
         const comments = document.getElementById('comments').value;
 
-        // Ensure that all fields are filled out
-        if (!name || !date || !time ) {
-            alert("All fields are required. Please fill out the entire form.");
+        // Ensure that required fields are filled out
+        if (!name || !date || !time) {
+            alert("Please fill out all required fields.");
             return;
         }
 
@@ -754,8 +763,11 @@
             return;
         }
 
+        // Format time to 12-hour format with AM/PM
+        const formattedTime = formatTimeTo12Hour(time);
+
         // Construct the message to send via WhatsApp
-        let message = `Good day! I’d like to make an appointment.\n\n• Name: ${name}\n• Date of Appointment: ${date}\n• Time Slot: ${time}\n• Additional Comments: ${comments}\n\nPlease confirm availability.`;
+        let message = `Good day! I’d like to make an appointment.\n\n• Name: ${name}\n• Date of Appointment: ${date}\n• Time Slot: ${formattedTime}\n• Additional Comments: ${comments ? comments : 'Optional'}\n\nPlease confirm availability.`;
         
         // Open WhatsApp with the generated message
         const whatsappLink = `https://wa.me/+919884703322?text=${encodeURIComponent(message)}`;
