@@ -68,7 +68,7 @@
             <li><a href="contact_us.html">Contact</a></li>
             <li><!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
+                Appointment
               </button>
             </li>
           </ul>
@@ -145,10 +145,8 @@
 
     </section><!-- /Hero Section -->
 
-   
-
     <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
+    <!-- <section id="stats" class="stats section light-background">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -160,7 +158,6 @@
               <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
               <p>Doctors</p>
             </div>
-          </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-regular fa-hospital"></i>
@@ -168,7 +165,6 @@
               <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
               <p>Departments</p>
             </div>
-          </div><!-- End Stats Item -->
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fas fa-flask"></i>
@@ -176,7 +172,7 @@
               <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
               <p>Research Labs</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div>
 
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fas fa-award"></i>
@@ -184,17 +180,14 @@
               <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
               <p>Awards</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div>
 
         </div>
 
       </div>
 
-    </section><!-- /Stats Section -->
-
-  
-
- 
+    </section> -->
+    <!-- /Stats Section -->
 
     <!-- Departments Section -->
     <section id="departments" class="departments section">
@@ -219,9 +212,6 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-3">Laser (Skin / Hair)</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-4">Hair treaments</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#departments-tab-5">Physiotherapy</a>
@@ -266,18 +256,7 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="departments-tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3> Effective Hair Treatments for Growth</h3>
-                    <p class="fst-italic">Strengthen your hair with micro-needling, derma roller, and advanced treatments designed to nourish and promote healthy growth.</p>
-                    <p>Our hair treatments, including micro-needling and derma roller techniques, stimulate the scalp and promote new hair growth. These therapies increase blood flow to hair follicles, nourishing and revitalizing your hair for fuller, thicker strands, ensuring lasting improvement and shine.</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/4.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
+            
               <div class="tab-pane" id="departments-tab-5">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
@@ -297,8 +276,6 @@
       </div>
 
     </section><!-- /Departments Section -->
-
- 
 
     <!-- Faq Section -->
     <section id="faq" class="faq section light-background">
@@ -597,8 +574,6 @@
 
     </section><!-- /Gallery Section -->
 
-  
-
   </main>
 
   <footer id="footer" class="footer light-background">
@@ -673,30 +648,30 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Appointment</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form id="appointmentForm">
       <div class="modal-body">
-        <form id="appointmentForm">
-          <label for="name">Name:</label>
-          <input type="text" id="name" required><br><br>
+        
+          <label for="name" class="form-label"><b>Name:</b></label>
+          <input type="text" id="name" class="form-control" required><br>
       
-          <label for="date">Date of Appointment:</label>
-          <input type="date" id="date" required><br><br>
+          <label for="date" class="form-label"><b>Date of Appointment:</b></label>
+          <input type="date" id="date" class="form-control" required><br>
       
-          <label for="time">Time Slot:</label>
-          <input type="time" id="time" required><br><br>
+          <label for="time" class="form-label"><b>Time Slot:</b></label>
+          <input type="time" id="time" class="form-control" required><br>
       
-          <label for="comments">Additional Comments:</label>
-          <input type="text" id="comments"><br><br>
+          <label for="comments" class="form-label"><b>Message:</b></label>
+          <input type="text" id="comments" class="form-control"><br>
       
-          <button type="button" onclick="sendWhatsApp()">Send WhatsApp Message</button>
-      </form>
+      
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary"onclick="sendWhatsApp()">WhatsApp Message</button>
       </div>
+    </form>
     </div>
   </div>
 </div>
