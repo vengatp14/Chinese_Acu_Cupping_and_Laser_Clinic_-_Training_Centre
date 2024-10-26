@@ -8,7 +8,8 @@
   <meta name="description" content="Contact us for appointments or inquiries regarding our acupuncture, cupping therapy, laser treatments, skin care, hair restoration, physiotherapy, and fitness programs in Chennai. We're here to assist you.
 
   ">
-  <meta name="keywords" content="Contact us, wellness center Chennai, acupuncture clinic contact, cupping therapy appointment, laser treatments Chennai, physiotherapy contact, hair care, skin treatments Chennai">
+  <meta name="keywords" content="Contact us, wellness center Chennai, acupuncture clinic contact, cupping therapy appointment, laser treatments Chennai, physiotherapy contact, hair care, skin treatments Chennai,Hijama cupping therapy Chennai,Best hijama clinic in Chennai,Wet cupping therapy Chennai,Cupping therapy near me Chennai,Hijama near me Chennai
+  Fire cupping therapy Chennai,Vacuum cupping Chennai,Cupping therapy for back pain Chennai,Cupping for detox Chennai,Cupping therapy in Chennai,Hijama for weight loss Chennai,Cupping for muscle pain Chennai,Hijama for joint pain Chennai,Best cupping therapy clinic Chennai,Hijama therapy for health Chennai,Cupping therapy for weight loss Chennai,Cupping therapy for hormonal imbalance chennai,Cupping for back pain chennai ,Cupping therapy for breast lifting chennai,Cupping therapy for face lifting chennai,Cupping for body shape up Chennai,Cupping treatment for thyroid problem chennai,Cupping therapy for irregular periods chennai ">
 
   <!-- Favicons -->
   <link href="" rel="icon">
@@ -262,7 +263,38 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
-
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Appointment</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="appointmentForm">
+      <div class="modal-body">
+        
+          <label for="name" class="form-label"><b>Name:</b></label>
+          <input type="text" id="name" class="form-control" required><br>
+      
+          <label for="date" class="form-label"><b>Date of Appointment:</b></label>
+          <input type="date" id="date" class="form-control" required><br>
+      
+          <label for="time" class="form-label"><b>Time Slot:</b></label>
+          <input type="time" id="time" class="form-control" required><br>
+      
+          <label for="comments" class="form-label"><b>Message:</b></label>
+          <input type="text" id="comments" class="form-control"><br>
+      
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"onclick="sendWhatsApp()">WhatsApp Message</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>

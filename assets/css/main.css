@@ -56,7 +56,12 @@
 :root {
   scroll-behavior: smooth;
 }
-
+@media (max-width: 992px) {
+  .departments .nav-link.active {
+      color: #ffffff;
+      background: var(--accent-color);
+  }
+}
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
